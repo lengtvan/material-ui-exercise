@@ -18,7 +18,8 @@ function App() {
   return (
     <>
       {/* <ThemeProvider theme={darkTheme}> */}
-      <ButtonAppBar />
+      <ThemeProvider theme={darkTheme}>
+        <ButtonAppBar />
       <CssBaseline />
       <Paper
         sx={{
@@ -36,6 +37,8 @@ function App() {
         </Stack>
         <Pagination count={4} color="standard" />
       </div>
+      </ThemeProvider>
+      
       {/* </ThemeProvider> */}
     </>
   );

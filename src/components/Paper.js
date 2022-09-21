@@ -3,8 +3,13 @@ import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
+import CssBaseline from '@mui/material/CssBaseline';
 
-const Item = styled(Paper)(({ theme }) => ({
+
+
+const darkTheme = createTheme({ palette: { mode: "dark" } });
+
+const Item = styled(Paper)(({ theme= darkTheme}) => ({
   ...theme.typography.body2,
   textAlign: "center",
   color: theme.palette.text.secondary,
@@ -12,15 +17,14 @@ const Item = styled(Paper)(({ theme }) => ({
   lineHeight: "60px",
 }));
 
-const darkTheme = createTheme({ palette: { mode: "dark" } });
-const lightTheme = createTheme({ palette: { mode: "light" } });
 
 export default function Elevation() {
   return (
     <Grid container spacing={2}>
-      {[lightTheme, darkTheme].map((theme, index) => (
-        <Grid item xs={6} key={index}>
-          <ThemeProvider theme={theme}>
+      {
+        <Grid item xs={6}>
+          <ThemeProvider theme={darkTheme}>
+          <CssBaseline />
             <Box
               sx={{
                 p: 2,
@@ -38,7 +42,7 @@ export default function Elevation() {
             </Box>
           </ThemeProvider>
         </Grid>
-      ))}
+      }
     </Grid>
   );
 }

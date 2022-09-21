@@ -71,7 +71,7 @@ export default function ButtonAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            Job Routing
           </Typography>
           <Search>
             <SearchIconWrapper>
