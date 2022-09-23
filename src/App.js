@@ -11,6 +11,7 @@ import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 import { black } from "@mui/material/colors";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
+import { Grid } from "@mui/material";
 
 const darkTheme = createTheme({ palette: { mode: "dark" } });
 
@@ -35,7 +36,22 @@ function App() {
             <JobCard job={job} />
           ))}
         </Stack>
-        <Pagination count={4} color="standard" />
+        <Grid
+  container
+  spacing={0}
+  direction="column"
+  alignItems="center"
+  justify="center"
+  style={{ minHeight: '100vh' }}
+>
+
+  <Grid item xs={3}>
+   
+  </Grid>   
+ <Pagination count={4} color="standard" 
+/>
+</Grid> 
+       
       </div>
       </ThemeProvider>
       

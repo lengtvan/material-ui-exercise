@@ -10,7 +10,7 @@ import Chip from "@mui/material/Chip";
 
 export default function JobCard({ job }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: "auto" }} >
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {job.title}
@@ -27,6 +27,9 @@ export default function JobCard({ job }) {
           <Chip label={skill} />
         ))}
       </Typography>
+      <Button  sx={{ m: 2 }} variant="outlined" size="medium" color="secondary">
+          Load More
+        </Button>
     </Card>
   );
 }
